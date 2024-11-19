@@ -44,7 +44,7 @@ export default function Header() {
                             <Link to={'/productlisting'} >
                             <FiMenu className='laptop:hidden me-4  text-[24px]' />
                             </Link>
-                            <FiMenu className='laptop:hidden me-4  text-[24px]' />
+
                             <Link to={'/'}><img src={logo} className='laptop:w-[156px] w-[87px] laptop:h-9 h-5' alt="" /></Link>
 
                         </div>
