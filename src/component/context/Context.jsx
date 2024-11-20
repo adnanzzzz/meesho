@@ -123,7 +123,7 @@ export default function Context({ children }) {
   let setheart = (v) => {
     // setlaldil(!laldil)
     console.log(wish)
-    var data = '';
+    var data = [];
     if (wish != undefined) {
     data = wish.filter((value) => {
         if (value.id == v.id) {
