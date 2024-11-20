@@ -49,15 +49,18 @@ export default function Header() {
 
                         </div>
                         <div className='laptop:hidden gap-[15px] text-[23px] flex'>
-                            <div> <Link to={'Wishlist'}><FcLike /></Link> </div>
-                            <div className='text-[#C53EAD] relative pt-1 text-[20px]'><FaCartShopping />
+                            <div> <Link to={'/Wishlist'}><FcLike /></Link> </div>
+                            <div className='text-[#C53EAD] relative pt-1 text-[20px]'>
+                                <Link to={'/cart'}>
+                                
+                                <FaCartShopping />
                                 {
                                     (userlogedin.length == 0)
                                         ?
                                         ''
                                         :
                                         <div className='absolute bottom-[15px] text-[10px] rounded-[50%] left-[15px] py-1 px-2 text-white bg-[green]'>{userlogedin.cart.length}</div>
-                                }
+                                }</Link>
 
                             </div>
                         </div>

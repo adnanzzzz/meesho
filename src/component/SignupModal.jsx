@@ -60,7 +60,7 @@ let letsignin = (event) => {
 >
   <div
     data-dialog="sign-in-modal"
-    class="relative top-[10%] mx-auto w-full max-w-[24rem] rounded-lg overflow-hidden shadow-sm"
+    class="relative top-[5%] mx-auto w-full max-w-[24rem] rounded-lg overflow-hidden shadow-sm"
   >
     <RxCross1 onClick={closepopup} className='absolute top-2 right-2 text-[20px] text-black z-[99999]'/>
     <div class="relative flex flex-col bg-white">
