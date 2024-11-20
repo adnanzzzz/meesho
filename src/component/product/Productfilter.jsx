@@ -75,7 +75,7 @@ export default function Productfilter({ products, setclears, clear, mobilemenu, 
                     </div>
                 </div> */}
 
-          <div className="flex justify-center gap-5 flex-wrap">
+          <div className="flex justify-center laptop:gap-5 flex-wrap">
             {
               products.map((v, i) => {
                 // aa(v)
