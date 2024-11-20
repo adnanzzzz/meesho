@@ -11,7 +11,8 @@ export default function Context({ children }) {
   let [signup, setsignup] = useState(getsignupdata)
   let getlogedin = JSON.parse(localStorage.getItem('logedin')) ?? '';
   let [userlogedin, setuserlogedin] = useState(getlogedin)
-  let [wish, setwish] = useState(userlogedin.wish)
+  let wishdata = userlogedin.wish ?? []
+  let [wish, setwish] = useState(wishdata)
   let [cartitems, setcartitems] = useState(userlogedin.cart)
   // console.log(userlogedin)
 
