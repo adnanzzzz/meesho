@@ -2,6 +2,7 @@ import React, { createContext, useState } from 'react'
 const Commoncontext = createContext()
 
 export default function Context({ children }) {
+  let[popupsignup,setpopup]=useState(false)
   //All Categories store in Categories state---------------------------------------------------------->>>>
   let [Categories, setCategories] = useState([])
   //All product store in products state---------------------------------------------------------->>>>
@@ -85,7 +86,7 @@ export default function Context({ children }) {
 
     }
     else {
-      alert('please login')
+      setpopup(true)
     }
 
   }
@@ -241,7 +242,8 @@ export default function Context({ children }) {
     products, setproducts,
     signup, setsignup,
     userlogedin, setuserlogedin,
-    increaseCartqty, decreaseCartqty
+    increaseCartqty, decreaseCartqty,
+    popupsignup,setpopup
   }
   return (
     <div>

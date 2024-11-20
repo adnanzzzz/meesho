@@ -6,6 +6,7 @@ import Header from './component/commonComponent/Header'
 import Slider from './component/commonComponent/Slidersection'
 import Slidersection from './component/commonComponent/Slidersection'
 import SectionTwo from './component/commonComponent/SectionTwo'
+import SignupModal from './component/SignupModal'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ function App() {
     <>
 
      <Slidersection/>
+     {/* <SignupModal/> */}
      <SectionTwo/>
     
     </>

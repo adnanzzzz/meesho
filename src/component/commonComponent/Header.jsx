@@ -16,33 +16,33 @@ import categories from './megamenuInnercontent'
 import { Commoncontext } from '../context/Context.jsx';
 // import { Commoncontext } from '../context/context';
 export default function Header() {
-    let { cartitems, userlogedin, setuserlogedin,setcartitems,setwish } = useContext(Commoncontext);
+    let { setpopup,cartitems, userlogedin, setuserlogedin, setcartitems, setwish } = useContext(Commoncontext);
     let clearlogin = () => {
         console.log(cartitems)
         // setcartitems([])
-        
+
         localStorage.setItem('logedin', JSON.stringify([]))
         setuserlogedin([])
         setwish([])
         // localStorage.clear();
-        
+
         console.log(userlogedin)
         // console.log(userlogedin)
 
     }
     let pleaselogin = () => {
-        alert('please login')
+        setpopup(true)
     }
     // console.log(userlogedin)
     return (
         <>
-            <div className=' max-w-[100%] shadow-xl z-[9999] bg-[white] laptop:sticky laptop:top-0 '>
-                <header className='max-w-[1330px] bg-[white] largelaptop:gap-0 laptop:pb-0 pb-2 flex m-auto largelaptop:px-0 px-4 laptop:items-center smallmob:flex-col laptop:flex-row tablet:justify-between mx-auto ' >
+            <div className=' max-w-[100%]  z-[9999] bg-[white] sticky px-4 top-0 '>
+                <header className='max-w-[1330px] bg-[white] largelaptop:gap-0  flex m-auto largelaptop:px-0  laptop:items-center smallmob:flex-col laptop:flex-row tablet:justify-between mx-auto ' >
 
                     <figure className='flex justify-between laptop:static sticky  top-0 laptop:py-0 py-5'>
                         <div className='flex'>
                             <Link to={'/productlisting'} >
-                            <FiMenu className='laptop:hidden me-4  text-[24px]' />
+                                <FiMenu className='laptop:hidden me-4  text-[24px]' />
                             </Link>
 
                             <Link to={'/'}><img src={logo} className='laptop:w-[156px] w-[87px] laptop:h-9 h-5' alt="" /></Link>
@@ -62,9 +62,11 @@ export default function Header() {
                             </div>
                         </div>
                     </figure>
-                    <div className='flex border-[#8B8BA3] w-100% px-2 font-normal py-[8.2px] border largelaptop:rounded rounded-[13px]  items-center' >
+                    <div className='laptop:flex hidden border-[#8B8BA3] w-100% px-2 font-normal py-[8.2px] border largelaptop:rounded rounded-[13px]  items-center' >
                         <div className='text-[27px] text-[#8B8BA3] font-bold'><CiSearch className='font-black' /></div>
-                        <div className='w-[80%]'><input type="text" placeholder='Try Saree,Kurti or Search by Product Code' className='outline-none rounded laptop:w-[250px] smallmob:w-[100%]  largelaptop:w-[358px] px-1' /></div>
+                        <div className='w-[80%]'>
+                            <input type="text" placeholder='Try Saree,Kurti or Search by Product Code' className='outline-none rounded laptop:w-[250px] smallmob:w-[100%]  largelaptop:w-[358px] px-1' />
+                        </div>
                     </div>
 
                     <nav className='hidden  font-medium laptop:block '>
@@ -151,7 +153,7 @@ export default function Header() {
                                             <div className=' largelaptop:pl-9 h-10 laptop:pl-4 relative laptop:pr-4 largelaptop:pr-[27px]'>
                                                 <BsCart2 className='w-[100%] text-[20px]' />Cart
                                                 {
-                                                    (cartitems== '')
+                                                    (cartitems == '')
                                                         ?
                                                         ""
                                                         :
@@ -184,8 +186,17 @@ export default function Header() {
 
                     </ul>
                 </nav>
-
+                
             </div>
+            <div className='px-4 pt-1 pb-2'>
+            <div className='laptop:hidden flex  border-[#8B8BA3] w-100% px-2 font-normal py-[8.2px] border largelaptop:rounded rounded-[13px]  items-center' >
+                        <div className='text-[23px] text-[#8B8BA3] font-bold'><CiSearch className='font-black' /></div>
+                        <div className='w-[80%]'>
+                            <input type="text" placeholder='Try Saree,Kurti or Search by Product Code' className='outline-none rounded laptop:w-[250px] smallmob:w-[100%]  largelaptop:w-[358px] px-1' />
+                        </div>
+                    </div>
+            </div>
+            
         </>
     )
 }

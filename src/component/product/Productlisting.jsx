@@ -5,6 +5,7 @@ import Productfilter from './Productfilter'
 import { IoMdHeart } from "react-icons/io";
 import { Commoncontext } from '../context/Context.jsx';
 import { Link } from 'react-router-dom';
+import SignupModal from '../SignupModal.jsx';
 
 export default function Productlisting() {
     let {Categories,setCategories,products, setproducts,wish}= useContext(Commoncontext)
@@ -123,6 +124,8 @@ export default function Productlisting() {
                 <p className='text-[20-px] font-semibold'>Wishlist</p>
                 </Link>
                 </div>
+                <SignupModal/>
+                    
                 <div className='flex max-w-[1350px] laptop:gap-[20px] mx-[auto]'>
                     <Filterproductsidebar
                         // trueprice={trueprice} 
