@@ -59,7 +59,7 @@ export default function Header() {
                                         ?
                                         ''
                                         :
-                                        <div className='absolute bottom-[15px] text-[10px] rounded-[50%] left-[15px] py-1 px-2 text-white bg-[green]'>{userlogedin.cart.length}</div>
+                                        <div className='absolute bottom-[15px] text-[10px] rounded-[50%] left-[15px] py-1 px-2 text-white bg-[green]'>{cartitems.length}</div>
                                 }</Link>
 
                             </div>

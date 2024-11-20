@@ -6,7 +6,7 @@ import { Commoncontext } from './context/Context'
 import { useNavigate } from 'react-router-dom'
 
 export default function LogIn() {
-  let {signup,userlogedin,setuserlogedin,cartitems,setcartitems} = useContext(Commoncontext)
+  let {signup,userlogedin,setuserlogedin,cartitems,setcartitems,setwish} = useContext(Commoncontext)
   let navigation = useNavigate()
 let submithandle =(event)=>{
 event.preventDefault();
@@ -24,6 +24,19 @@ localStorage.setItem('logedin',JSON.stringify(data[0]))
 setuserlogedin(data[0])
 setcartitems(data[0].cart)
 navigation('/productlisting')
+}
+let clearlogin = () => {
+  console.log(cartitems)
+  // setcartitems([])
+
+  localStorage.setItem('logedin', JSON.stringify([]))
+  setuserlogedin([])
+  setwish([])
+  // localStorage.clear();
+
+  console.log(userlogedin)
+  // console.log(userlogedin)
+
 }
 // console.log(userlogedin[0].cart)
 // console.log(cartitems)
@@ -57,7 +70,7 @@ navigation('/productlisting')
             </div>
             <button type='submit' class="bg-green-500 hover:bg-green-700 text-white uppercase text-sm font-semibold px-4 py-2 rounded">Login</button>
           </form>
-          <a class="text-blue-700 text-center text-sm" href="/login">Forgot password?</a>
+          <a  onClick={clearlogin} class="text-blue-700 text-center text-sm" href="/login">Log out</a>
         </div>
       </div>
     </div>

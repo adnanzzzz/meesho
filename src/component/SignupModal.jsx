@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { RxCross1 } from "react-icons/rx";
 import { Commoncontext } from './context/Context';
+import { Link } from 'react-router-dom';
 export default function SignupModal() {
 let {popupsignup,setpopup,signup, setsignup,cartitems,setcartitems,setuserlogedin }=useContext(Commoncontext)
 let closepopup =()=>{
@@ -106,13 +107,13 @@ let letsignin = (event) => {
       </div>
       <div class="p-6 pt-0">
         <button type='submit' class="w-full rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" >
-          Sign In
+          Sign up
         </button>
         <p class="flex justify-center mt-6 text-sm text-slate-600">
-          Don&apos;t have an account?
-          <a href="#signup" class="ml-1 text-sm font-semibold text-slate-700 underline">
-            Sign up
-          </a>
+          already  have an account?
+          <Link to={'/login'} class="ml-1 text-sm font-semibold text-slate-700 underline">
+            Log in
+          </Link>
         </p>
       </div>
     </div>

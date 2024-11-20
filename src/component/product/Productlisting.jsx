@@ -118,7 +118,7 @@ export default function Productlisting() {
     return (
         <>
             <div className="bg-white">
-                <div className={` ${(wish=='') ? 'hidden' : 'fixed'} tablet:hidden top-[45%] rounded-full border shadow py-3 px-2 right-6`}>
+                <div className={` ${(wish==undefined) ? 'hidden' : 'tablet:block'} hidden  fixed top-[45%] rounded-full border shadow py-3 px-2 right-6`}>
                     <Link to={'/Wishlist'}>
                 <IoMdHeart className='text-[red] mx-auto text-[30px]'/>
                 <p className='text-[20-px] font-semibold'>Wishlist</p>
